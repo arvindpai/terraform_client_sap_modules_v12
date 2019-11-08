@@ -5,6 +5,8 @@ Below is the list of available submodules:
 
 - [SAP HANA](./modules/sap_hana/README.md)
 - [SAP HANA SVPC](./modules/sap_hana_svpc/README.md)
+- [SAP HANA HA](./modules/sap_hana_ha/README.md)
+- [SAP HANA HA SVPC](./modules/sap_hana_ha_svpc/README.md)
 
 
 
