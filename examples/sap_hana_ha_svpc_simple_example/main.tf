@@ -18,8 +18,8 @@ provider "google" {
   version = "~> 2.6.0"
 }
 
-module "gcp_sap_hana_ha" {
-  source                     = "../../modules/sap_hana_ha"
+module "gcp_sap_hana_ha_svpc" {
+  source                     = "../../modules/sap_hana_ha_svpc"
   subnetwork                 = "${var.subnetwork}"
   linux_image_family         = "${var.linux_image_family}"
   linux_image_project        = "${var.linux_image_project}"
