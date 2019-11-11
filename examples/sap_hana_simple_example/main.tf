@@ -22,7 +22,6 @@ module "gcp_sap_hana" {
   instance_name              = "${var.instance_name}"
   instance_type              = "${var.instance_type}"
   project_id                 = "${var.project_id}"
-  subnetwork_project         = "${var.subnetwork_project}"
   subnetwork                 = "${var.subnetwork}"
   region                     = "${var.region}"
   zone                       = "${var.zone}"
