@@ -14,10 +14,6 @@
  * limitations under the License.
  */
 
-provider "google" {
-  version = "~> 2.6.0"
-}
-
 module "gcp_sap_hana_ha" {
   source                     = "../../modules/sap_hana_ha"
   subnetwork                 = "${var.subnetwork}"
