@@ -69,6 +69,7 @@ variable "sap_deployment_debug" {
 
 variable "post_deployment_script" {
   description = "SAP post deployment script"
+
 }
 
 variable "sap_hana_sid" {
