@@ -62,12 +62,12 @@ variable "linux_image_project" {
 variable "sap_hana_deployment_bucket" {
   description = "SAP HANA post deployment script. Must be a gs:// or https:// link to the script."
 }
-
+/*
 variable "post_deployment_script" {
   description = "SAP HANA post deployment script. Must be a gs:// or https:// link to the script."
   default     = ""
 }
-
+*/
 variable "sap_hana_sid" {
   description = "SAP HANA System Identifier"
 }

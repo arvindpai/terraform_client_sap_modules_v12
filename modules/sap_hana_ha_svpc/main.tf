@@ -31,7 +31,11 @@ data "template_file" "startup_sap_hana_2" {
   template = "${file("${path.module}/files/startup_secondary.sh")}"
 }
 
-data "template_file" "post_deployment_route" {
+data "template_file" "post_deployment_route_primary" {
+  template = "${file("${path.module}/files/route1.sh")}"
+}
+
+data "template_file" "post_deployment_route_secondary" {
   template = "${file("${path.module}/files/route1.sh")}"
 }
 
@@ -148,7 +152,7 @@ resource "google_compute_instance" "primary" {
   metadata = {
     sap_hana_deployment_bucket = "${var.sap_hana_deployment_bucket}"
     sap_deployment_debug       = "${var.sap_deployment_debug}"
-    post_deployment_script     = "${data.template_file.post_deployment_route.rendered}"
+    post_deployment_script     = "${data.template_file.post_deployment_route_primary.rendered}"
     sap_hana_sid               = "${var.sap_hana_sid}"
     sap_primary_instance       = "${var.primary_instance_name}"
     sap_secondary_instance     = "${var.secondary_instance_name}"
@@ -220,7 +224,7 @@ resource "google_compute_instance" "secondary" {
   metadata = {
     sap_hana_deployment_bucket = "${var.sap_hana_deployment_bucket}"
     sap_deployment_debug       = "${var.sap_deployment_debug}"
-    post_deployment_script     = "${var.post_deployment_script}"
+    post_deployment_script     = "${data.template_file.post_deployment_route_secondary.rendered}"
     sap_hana_sid               = "${var.sap_hana_sid}"
     sap_primary_instance       = "${var.primary_instance_name}"
     sap_secondary_instance     = "${var.secondary_instance_name}"
