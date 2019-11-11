@@ -15,7 +15,7 @@
  */
 
 
-module "gcp_sap_hana" {
+module "gcp-sap-hana" {
   source                     = "../../modules/sap_hana"
   linux_image_family         = "${var.linux_image_family}"
   linux_image_project        = "${var.linux_image_project}"

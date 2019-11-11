@@ -13,15 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 output "instance_name" {
-  description = "Name of Netweaver instance"
-  value       = "${var.instance_name}"
-
+  description = "Name of sap ase instance"
+  value       = "${element(compact(google_compute_instance.master.*.name),0)}"
 }
 
 output "zone" {
   description = "Compute Engine instance deployment zone"
-  value       = "${var.zone}"
-  value = module.project-factory.project_name
+  value       = "${element(compact(google_compute_instance.master.*.zone),0)}"
+}
+
+output "instance_machine_type" {
+  description = "Primary GCE instance/machine type."
+  value       = "${element(compact(google_compute_instance.master.*.machine_type),0)}"
 }
