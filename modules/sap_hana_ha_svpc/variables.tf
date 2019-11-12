@@ -66,12 +66,11 @@ variable "sap_deployment_debug" {
   description = "Debug flag for SAP HANA deployment."
   default     = "false"
 }
-/*
+
 variable "post_deployment_script" {
   description = "SAP post deployment script"
-
 }
-*/
+
 variable "sap_hana_sid" {
   description = "SAP HANA System Identifier. When using the SID to enter a user session, like this for example, `su - [SID]adm`, make sure that [SID] is in lower case."
 }
