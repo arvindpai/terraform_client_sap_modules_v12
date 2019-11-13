@@ -15,6 +15,7 @@ The resources/services/activations/deletions that this module will create/trigge
 You can go in the [examples](../../examples) folder complete working example. However, here's an example of how to use the module in a main.tf file.
 
 ```hcl
+
 module "gcp_sap_hana_scaleout_svpc" {
   source                     = "terraform-google-modules/sap/google/sap_hana_scaleout_svpc"
   post_deployment_script     = "${var.post_deployment_script}"
