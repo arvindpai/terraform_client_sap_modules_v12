@@ -14,10 +14,6 @@
  * limitations under the License.
  */
 
-terraform {
-  required_version = "~> 0.12.3"
-}
-
 
 data "template_file" "startup_sap_emptyha_hana_1" {
   template = "${file("${path.module}/files/startup.sh")}"

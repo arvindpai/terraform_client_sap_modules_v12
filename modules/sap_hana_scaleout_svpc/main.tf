@@ -14,10 +14,6 @@
  * limitations under the License.
  */
 
-terraform {
-  required_version = "~> 0.12.3"
-}
-
 module "sap_hana" {
   source        = "./sap_hana_python"
   instance-type = "${var.instance_type}"

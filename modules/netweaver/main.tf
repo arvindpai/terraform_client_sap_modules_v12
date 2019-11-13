@@ -14,9 +14,6 @@
  * limitations under the License.
  */
 
-terraform {
-  required_version = "~> 0.12.3"
-}
 
 locals {
   device_name_1 = "${var.instance_name}-${var.device_1}"

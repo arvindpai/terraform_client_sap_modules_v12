@@ -14,9 +14,6 @@
  * limitations under the License.
  */
 
-terraform {
-  required_version = "~> 0.12.3"
-}
 
 resource "google_compute_address" "gcp_master_ip" {
   project = "${var.project_id}"

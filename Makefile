@@ -21,14 +21,13 @@ SHELL := /usr/bin/env bash
 # Docker build config variables
 CREDENTIALS_PATH 			?= /cft/workdir/credentials.json
 DOCKER_ORG 				:= gcr.io/cloud-foundation-cicd
-DOCKER_TAG_BASE_KITCHEN_TERRAFORM 	?= 1.0.1
+DOCKER_TAG_BASE_KITCHEN_TERRAFORM 	?= 2.3.0
 DOCKER_REPO_BASE_KITCHEN_TERRAFORM 	:= ${DOCKER_ORG}/cft/kitchen-terraform:${DOCKER_TAG_BASE_KITCHEN_TERRAFORM}
 
 # All is the first target in the file so it will get picked up when you just run 'make' on its own
-.PHONY: all
 all: check generate_docs
 
-# Run all available linters
+.PHONY: check
 check: check_shell check_python check_golang check_terraform check_docker check_base_files test_check_headers check_headers check_trailing_whitespace
 
 # The .PHONY directive tells make that this isn't a real target and so
@@ -90,9 +89,12 @@ version:
 docker_run:
 	docker run --rm -it \
 		-e PROJECT_ID \
+		-e REGION \
+		-e ZONE \
+		-e SERVICE_ACCOUNT_EMAIL \
 		-e SERVICE_ACCOUNT_JSON \
 		-e GOOGLE_APPLICATION_CREDENTIALS=${CREDENTIALS_PATH} \
-		-v $(CURDIR):/cft/workdir \
+		-v "$(CURDIR)":/cft/workdir \
 		${DOCKER_REPO_BASE_KITCHEN_TERRAFORM} \
 		/bin/bash -c "source test/ci_integration.sh && setup_environment && exec /bin/bash"
 
@@ -100,9 +102,12 @@ docker_run:
 docker_create:
 	docker run --rm -it \
 		-e PROJECT_ID \
+		-e REGION \
+		-e ZONE \
+		-e SERVICE_ACCOUNT_EMAIL \
 		-e SERVICE_ACCOUNT_JSON \
 		-e GOOGLE_APPLICATION_CREDENTIALS=${CREDENTIALS_PATH} \
-		-v $(CURDIR):/cft/workdir \
+		-v "$(CURDIR)":/cft/workdir \
 		${DOCKER_REPO_BASE_KITCHEN_TERRAFORM} \
 		/bin/bash -c "source test/ci_integration.sh && setup_environment && kitchen create"
 
@@ -110,9 +115,12 @@ docker_create:
 docker_converge:
 	docker run --rm -it \
 		-e PROJECT_ID \
+		-e REGION \
+		-e ZONE \
+		-e SERVICE_ACCOUNT_EMAIL \
 		-e SERVICE_ACCOUNT_JSON \
 		-e GOOGLE_APPLICATION_CREDENTIALS=${CREDENTIALS_PATH} \
-		-v $(CURDIR):/cft/workdir \
+		-v "$(CURDIR)":/cft/workdir \
 		${DOCKER_REPO_BASE_KITCHEN_TERRAFORM} \
 		/bin/bash -c "source test/ci_integration.sh && setup_environment && kitchen converge"
 
@@ -120,9 +128,12 @@ docker_converge:
 docker_verify:
 	docker run --rm -it \
 		-e PROJECT_ID \
+		-e REGION \
+		-e ZONE \
+		-e SERVICE_ACCOUNT_EMAIL \
 		-e SERVICE_ACCOUNT_JSON \
 		-e GOOGLE_APPLICATION_CREDENTIALS=${CREDENTIALS_PATH} \
-		-v $(CURDIR):/cft/workdir \
+		-v "$(CURDIR)":/cft/workdir \
 		${DOCKER_REPO_BASE_KITCHEN_TERRAFORM} \
 		/bin/bash -c "source test/ci_integration.sh && setup_environment && kitchen verify"
 
@@ -130,9 +141,12 @@ docker_verify:
 docker_destroy:
 	docker run --rm -it \
 		-e PROJECT_ID \
+		-e REGION \
+		-e ZONE \
+		-e SERVICE_ACCOUNT_EMAIL \
 		-e SERVICE_ACCOUNT_JSON \
 		-e GOOGLE_APPLICATION_CREDENTIALS=${CREDENTIALS_PATH} \
-		-v $(CURDIR):/cft/workdir \
+		-v "$(CURDIR)":/cft/workdir \
 		${DOCKER_REPO_BASE_KITCHEN_TERRAFORM} \
 		/bin/bash -c "source test/ci_integration.sh && setup_environment && kitchen destroy"
 
@@ -140,8 +154,11 @@ docker_destroy:
 test_integration_docker:
 	docker run --rm -it \
 		-e PROJECT_ID \
+		-e REGION \
+		-e ZONE \
+		-e SERVICE_ACCOUNT_EMAIL \
 		-e SERVICE_ACCOUNT_JSON \
 		-e GOOGLE_APPLICATION_CREDENTIALS=${CREDENTIALS_PATH} \
-		-v $(CURDIR):/cft/workdir \
+		-v "$(CURDIR)":/cft/workdir \
 		${DOCKER_REPO_BASE_KITCHEN_TERRAFORM} \
 		make test_integration

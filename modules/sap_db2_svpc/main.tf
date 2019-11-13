@@ -14,9 +14,7 @@
  * limitations under the License.
  */
 
-terraform {
-  required_version = "~> 0.12.3"
-}
+
 
 data "google_compute_subnetwork" "subnet" {
   name    = "${var.subnetwork}"
