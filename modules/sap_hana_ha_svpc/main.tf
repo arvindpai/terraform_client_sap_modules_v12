@@ -214,22 +214,22 @@ resource "google_compute_instance" "secondary" {
   metadata = {
     sap_hana_deployment_bucket = "${var.sap_hana_deployment_bucket}"
     sap_deployment_debug       = "${var.sap_deployment_debug}"
-    #post_deployment_script     = "${var.post_deployment_script}"
-    sap_hana_sid             = "${var.sap_hana_sid}"
-    sap_primary_instance     = "${var.primary_instance_name}"
-    sap_secondary_instance   = "${var.secondary_instance_name}"
-    sap_primary_zone         = "${var.primary_zone}"
-    sap_secondary_zone       = "${var.secondary_zone}"
-    sap_hana_instance_number = "${var.sap_hana_instance_number}"
-    sap_hana_sidadm_password = "${var.sap_hana_sidadm_password}"
-    sap_hana_system_password = "${var.sap_hana_system_password}"
-    sap_hana_sidadm_uid      = "${var.sap_hana_sidadm_uid}"
-    sap_hana_sapsys_gid      = "${var.sap_hana_sapsys_gid}"
-    sap_vip                  = "${var.sap_vip}"
-    sap_hana_scaleout_nodes  = 0
-    sap_vip_secondary_range  = "${var.sap_vip_secondary_range}"
-    publicIP                 = "${var.public_ip}"
-    startup-script           = "${data.template_file.startup_sap_hana_2.rendered}"
+    post_deployment_script     = "${var.post_deployment_script}"
+    sap_hana_sid               = "${var.sap_hana_sid}"
+    sap_primary_instance       = "${var.primary_instance_name}"
+    sap_secondary_instance     = "${var.secondary_instance_name}"
+    sap_primary_zone           = "${var.primary_zone}"
+    sap_secondary_zone         = "${var.secondary_zone}"
+    sap_hana_instance_number   = "${var.sap_hana_instance_number}"
+    sap_hana_sidadm_password   = "${var.sap_hana_sidadm_password}"
+    sap_hana_system_password   = "${var.sap_hana_system_password}"
+    sap_hana_sidadm_uid        = "${var.sap_hana_sidadm_uid}"
+    sap_hana_sapsys_gid        = "${var.sap_hana_sapsys_gid}"
+    sap_vip                    = "${var.sap_vip}"
+    sap_hana_scaleout_nodes    = 0
+    sap_vip_secondary_range    = "${var.sap_vip_secondary_range}"
+    publicIP                   = "${var.public_ip}"
+    startup-script             = "${data.template_file.startup_sap_hana_2.rendered}"
   }
 
   service_account {
