@@ -16,7 +16,7 @@ You can go in the [examples](../../examples) folder complete working example. Ho
 ```hcl
 
 module "gcp_sap_hana_ha_with_network" {
-source                      = "terraform-google-modules/sap/google/modules/sap_hana_ha_with_network"
+source                      = "../../modules/sap_hana_ha_with_network"
 subnetwork                 = "${var.subnetwork}"
 linux_image_family         = "${var.linux_image_family}"
 linux_image_project        = "${var.linux_image_project}"

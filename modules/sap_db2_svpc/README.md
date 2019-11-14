@@ -16,7 +16,7 @@ You can go in the [examples](../../examples) folder complete working example. Ho
 ```hcl
 
 module "gcp_sap_db2_svpc" {
-  source                 = "terraform-google-modules/sap/google/modules/sap_db2_svpc"
+  source                 = "../../modules/sap_db2_svpc"
   subnetwork            = "${var.subnetwork}"
   linux_image_family    = "${var.linux_image_family}"
   linux_image_project   = "${var.linux_image_project}"

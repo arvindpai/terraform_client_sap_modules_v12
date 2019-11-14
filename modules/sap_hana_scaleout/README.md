@@ -17,7 +17,7 @@ You can go in the [examples](../../examples) folder complete working example. Ho
 ```hcl
 
 module "gcp_sap_hana_scaleout" {
-  source                     = "terraform-google-modules/sap/google/sap_hana_scaleout"
+  source                     = "../../modules/sap_hana_scaleout"
   post_deployment_script     = "${var.post_deployment_script}"
   subnetwork                 = "${var.subnetwork}"
   linux_image_family         = "${var.linux_image_family}"

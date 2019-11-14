@@ -16,7 +16,7 @@ You can go in the [examples](../../examples) folder complete working example. Ho
 ```hcl
 
 module "gcp_netweaver_svpc" {
-  source                 = "terraform-google-modules/sap/google/modules/netweaver_svpc"
+  source                 = "../../modules/netweaver_svpc"
   post_deployment_script = "${var.post_deployment_script}"
   subnetwork             = "${var.subnetwork}"
   linux_image_family     = "${var.linux_image_family}"

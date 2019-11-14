@@ -19,7 +19,7 @@ provider "google" {
 }
 
 module "gcp_sap_db2" {
-  source                 = "terraform-google-modules/sap/google/modules/sap_db2"
+  source                 = "../../modules/sap_db2"
   subnetwork            = "${var.subnetwork}"
   linux_image_family    = "${var.linux_image_family}"
   linux_image_project   = "${var.linux_image_project}"
