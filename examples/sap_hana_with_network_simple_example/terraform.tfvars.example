@@ -1,0 +1,55 @@
+service_account_email = "service account"
+
+project_id = "project id"
+
+instance_name = "sap-terra-1"
+
+instance_type = "n1-highmem-16"
+
+linux_image_family = "sles-12-sp3-sap"
+
+linux_image_project = "suse-sap-cloud"
+
+boot_disk_type = "pd-ssd"
+
+boot_disk_size = 64
+
+autodelete_disk = "true"
+
+description = "sap-vpc-with-network"
+
+network = "network name"
+
+subnetwork = "subnet name"
+
+ip_cidr_range = "10.0.1.0/24"
+
+network_tags = ["foo"]
+
+sap_hana_instance_number = 10
+
+sap_hana_system_password = "Google123"
+
+sap_hana_sidadm_password = "Google123"
+
+sap_hana_deployment_bucket = "hana-gcp-20/hana20sps03"
+
+sap_hana_sid = "D10"
+
+address_name = "gcp-sap-ip-1"
+
+region = "us-central1"
+
+zone = "us-central1-a"
+
+disk_name_0 = "sap-hana-pd-sd-0"
+
+disk_name_1 = "sap-hana-pd-sd-1"
+
+priority = 800
+
+route_destination_range = "10.0.1.10/24"
+
+route_name = "sap-hana-route"
+
+route_tags = ["sap_routes"]

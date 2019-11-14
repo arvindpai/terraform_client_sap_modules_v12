@@ -18,7 +18,10 @@ Below is the list of available submodules:
 - [SAP DB2 SVPC](./modules/sap_db2_svpc/README.md)
 - [SAP ASE](./modules/sap_ase/README.md)
 - [SAP ASE SVPC](./modules/sap_ase_svpc/README.md)
-
+- [SAP HANA WITH NETWORK](./modules/sap_hana_with_network/README.md)
+- [NETWEAVER WITH NETWORK](./modules/netweaver_with_network/README.md)
+- [SAP HANA HA WITH NETWORK](./modules/sap_hana_ha_with_network/README.md)
+- [SAP ILB](./modules/ILB/README.md)
 
 Each submodules have their own usage documented in the [modules](./modules) folder.
 For example, see the [SAP HANA Usage Section](./modules/sap_hana/README.md#Usage).
