@@ -15,8 +15,8 @@ You can go in the [examples](../../examples) folder complete working example. Ho
 
 ```hcl
 
-module "gcp_sap_app_dr" {
-  source                 = "../../modules/sap_app_dr"
+module "gcp_sap_app_dr_svpc" {
+  source                 = "../../modules/sap_app_dr_svpc"
   subnetwork            = "${var.subnetwork}"
   instance_name         = "${var.instance_name}"
   instance_type         = "${var.instance_type}"
