@@ -65,7 +65,6 @@ variable "sap_hana_deployment_bucket" {
 
 variable "post_deployment_script" {
   description = "SAP HANA post deployment script. Must be a gs:// or https:// link to the script."
-  default     = ""
 }
 
 variable "sap_hana_sid" {

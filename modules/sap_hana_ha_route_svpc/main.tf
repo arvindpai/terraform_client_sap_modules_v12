@@ -19,10 +19,6 @@ module "sap_hana" {
   instance-type = "${var.instance_type}"
 }
 
-locals {
-  route_script_storage_location = "gs://hana-software/hana-gcp-20/route1.sh"
-}
-
 data "template_file" "startup_sap_hana_1" {
   template = "${file("${path.module}/files/startup.sh")}"
 }
@@ -145,7 +141,7 @@ resource "google_compute_instance" "primary" {
   metadata = {
     sap_hana_deployment_bucket = "${var.sap_hana_deployment_bucket}"
     sap_deployment_debug       = "${var.sap_deployment_debug}"
-    post_deployment_script     = "${local.route_script_storage_location}"
+    post_deployment_script     = "${var.post_deployment_script}"
     sap_hana_sid               = "${var.sap_hana_sid}"
     sap_primary_instance       = "${var.primary_instance_name}"
     sap_secondary_instance     = "${var.secondary_instance_name}"
@@ -217,7 +213,7 @@ resource "google_compute_instance" "secondary" {
   metadata = {
     sap_hana_deployment_bucket = "${var.sap_hana_deployment_bucket}"
     sap_deployment_debug       = "${var.sap_deployment_debug}"
-    post_deployment_script     = "${local.route_script_storage_location}"
+    post_deployment_script     = "${var.post_deployment_script}"
     sap_hana_sid               = "${var.sap_hana_sid}"
     sap_primary_instance       = "${var.primary_instance_name}"
     sap_secondary_instance     = "${var.secondary_instance_name}"
