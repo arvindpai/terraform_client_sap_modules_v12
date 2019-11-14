@@ -23,6 +23,7 @@ Below is the list of available submodules:
 - [SAP HANA HA WITH NETWORK](./modules/sap_hana_ha_with_network/README.md)
 - [SAP ILB](./modules/ILB/README.md)
 - [SAP APP DR](./modules/sap_app_dr/README.md)
+- [SAP APP DR SVPC](./modules/sap_app_dr_svpc/README.md)
 
 Each submodules have their own usage documented in the [modules](./modules) folder.
 For example, see the [SAP HANA Usage Section](./modules/sap_hana/README.md#Usage).
