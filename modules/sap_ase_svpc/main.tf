@@ -14,6 +14,10 @@
  * limitations under the License.
  */
 
+data "template_file" "startup_sap_ase_svpc" {
+  template = "${file("${path.module}/files/startup.sh")}"
+}
+
 
 data "google_compute_subnetwork" "subnet" {
   name    = "${var.subnetwork}"
@@ -222,7 +226,7 @@ resource "google_compute_instance" "master" {
     asesapdataSSD          = "${var.asesapdataSSD}"
     aselogSSD              = "${var.aselogSSD}"
     sap_ase_sid            = "${var.sap_ase_sid}"
-    startup-script         = "${var.startup_script}"
+    startup-script         = "${data.template_file.startup_sap_ase_svpc.rendered}"
     publicIP               = "${var.public_ip}"
   }
 

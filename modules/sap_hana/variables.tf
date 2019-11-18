@@ -104,7 +104,7 @@ variable "device_name_pd_hdd" {
 variable "service_account_email" {
   description = "Email of service account to attach to the instance."
 }
-
+hana
 variable "network_tags" {
   type        = list
   description = "List of network tags to attach to the instance."
@@ -152,7 +152,7 @@ variable "sap_hana_sapsys_gid" {
   description = "SAP HANA SAP System GID"
 }
 variable "public_ip" {
-  description = "Determines whether a public IP address is added to your VM instance."
+  description = "Determines whether hanaa public IP address is added to your VM instance."
   default     = false
   type        = bool
 }

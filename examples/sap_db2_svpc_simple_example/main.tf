@@ -29,7 +29,6 @@ module "gcp_sap_db2_svpc" {
   service_account_email = "${var.service_account_email}"
   boot_disk_size        = "${var.boot_disk_size}"
   boot_disk_type        = "${var.boot_disk_type}"
-  disk_type             = "${var.disk_type}"
   autodelete_disk       = "true"
   usr_sap_size          = "${var.usr_sap_size}"
   swap_mnt_size         = "${var.swap_mnt_size}"
@@ -44,5 +43,4 @@ module "gcp_sap_db2_svpc" {
   db2sapdata_size       = "${var.db2sapdata_size}"
   db2sapdata_ssd        = "${var.db2sapdata_ssd}"
   db2backup_size        = "${var.db2backup_size}"
-  startup_script        = "${var.startup_script}"
 }

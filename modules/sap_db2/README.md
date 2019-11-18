@@ -14,9 +14,6 @@ The resources/services/activations/deletions that this module will create/trigge
 You can go in the [examples](../../examples) folder complete working example. However, here's an example of how to use the module in a main.tf file.
 
 ```hcl
-provider "google" {
-  version = "~> 2.6.0"
-}
 
 module "gcp_sap_db2" {
   source                 = "../../modules/sap_db2"
@@ -32,7 +29,6 @@ module "gcp_sap_db2" {
   service_account_email = "${var.service_account_email}"
   boot_disk_size        = "${var.boot_disk_size}"
   boot_disk_type        = "${var.boot_disk_type}"
-  disk_type             = "${var.disk_type}"
   autodelete_disk       = "true"
   pd_standard_size      = "${var.pd_standard_size}"
   usr_sap_size          = "${var.usr_sap_size}"
@@ -48,7 +44,6 @@ module "gcp_sap_db2" {
   db2sapdata_size       = "${var.db2sapdata_size}"
   db2sapdata_ssd        = "${var.db2sapdata_ssd}"
   db2backup_size        = "${var.db2backup_size}"
-  startup_script        = "${var.startup_script}"
   public_ip             = "${var.public_ip}"
   }
 

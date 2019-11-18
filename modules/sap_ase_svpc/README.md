@@ -30,7 +30,6 @@ module "gcp_sap_ase_svpc" {
   service_account_email = "${var.service_account_email}"
   boot_disk_size        = "${var.boot_disk_size}"
   boot_disk_type        = "${var.boot_disk_type}"
-  disk_type             = "${var.disk_type}"
   autodelete_disk       = "true"
   pd_ssd_size           = "${var.pd_ssd_size}"
   usr_sap_size          = "${var.usr_sap_size}"
@@ -47,7 +46,6 @@ module "gcp_sap_ase_svpc" {
   aselogSSD             = "${var.aselogSSD}"
   sap_ase_sid           = "${var.sap_ase_sid}"
   instance_count_master = "${var.instance_count_master}"
-  startup_script        = "${var.startup_script}"
   public_ip             = "${var.public_ip}"
   }
 

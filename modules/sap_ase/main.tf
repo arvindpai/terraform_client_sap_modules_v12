@@ -15,6 +15,10 @@
  */
 
 
+data "template_file" "startup_sap_ase" {
+  template = "${file("${path.module}/files/startup.sh")}"
+}
+
 resource "google_compute_address" "gcp_master_ip" {
   project = "${var.project_id}"
   count   = "${var.instance_count_master}"
@@ -216,7 +220,7 @@ resource "google_compute_instance" "master" {
     asesapdataSSD          = "${var.asesapdataSSD}"
     aselogSSD              = "${var.aselogSSD}"
     sap_ase_sid            = "${var.sap_ase_sid}"
-    startup-script         = "${var.startup_script}"
+    startup-script         = "${data.template_file.startup_sap_ase.rendered}"
     publicIP               = "${var.public_ip}"
   }
 

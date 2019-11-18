@@ -30,7 +30,6 @@ Make sure you go through this [Requirements section](../../modules/sap_db2/READM
 | db2sapdata\_ssd | Db2 sap data ssd. | string | n/a | yes |
 | db2saptmp\_size | db2 sap temp size | string | n/a | yes |
 | db2sid\_size | DB2 sid size | string | n/a | yes |
-| disk\_type | The GCE data disk type. May be set to pd-standard (for PD HDD) or pd-ssd. | string | n/a | yes |
 | instance\_name | A unique name for the resource, required by GCE. Changing this forces a new resource to be created. | string | n/a | yes |
 | instance\_type | The GCE instance/machine type. | string | n/a | yes |
 | linux\_image\_family | GCE linux image family. | string | n/a | yes |
@@ -41,7 +40,6 @@ Make sure you go through this [Requirements section](../../modules/sap_db2/READM
 | project\_id | The ID of the project in which the resources will be deployed. | string | n/a | yes |
 | region | Region to deploy the resources. Should be in the same region as the zone. | string | n/a | yes |
 | service\_account\_email | Email of service account to attach to the instance. | string | n/a | yes |
-| startup\_script | Startup script to install SAP HANA. | string | n/a | yes |
 | subnetwork | The name or self_link of the subnetwork where the isntance will be deployed. The subnetwork must exist in the same region this instance will be created in. | string | n/a | yes |
 | swap\_mnt\_size | SAP mount size | string | n/a | yes |
 | swap\_size | SWAP Size | string | n/a | yes |

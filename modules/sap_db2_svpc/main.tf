@@ -14,6 +14,9 @@
  * limitations under the License.
  */
 
+data "template_file" "startup_sap_db2_svpc" {
+  template = "${file("${path.module}/files/startup.sh")}"
+}
 
 
 data "google_compute_subnetwork" "subnet" {
@@ -237,7 +240,7 @@ resource "google_compute_instance" "master" {
     db2backupSize          = "${var.db2backup_size}"
     swapmntSize            = "${var.swap_mnt_size}"
     sap_ibm_db2_sid        = "${var.db2_sid}"
-    startup-script         = "${var.startup_script}"
+    startup-script         = "${data.template_file.startup_sap_db2_svpc.rendered}"
     publicIP               = "${var.public_ip}"
   }
 

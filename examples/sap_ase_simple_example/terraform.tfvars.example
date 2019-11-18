@@ -44,8 +44,6 @@ zone = "us-central1-b"
 
 instance_count = 1
 
-boot_disk_type = "pd-ssd"
-
 instance_count_master = 1
 
 aseSID = "D01"

@@ -50,17 +50,13 @@ variable "autodelete_disk" {
   default     = true
 }
 
-variable "disk_type" {
-  description = "The GCE data disk type. May be set to pd-standard (for PD HDD) or pd-ssd."
-}
-
 variable "boot_disk_size" {
   description = "Root disk size in GB"
 }
 
 variable "boot_disk_type" {
   description = "The GCE boot disk type. May be set to pd-standard (for PD HDD) or pd-ssd."
-  default     = "pd-ssd"
+  default     = "pd-ssd"  startup_script        = "${var.startup_script}"
 }
 
 variable "service_account_email" {
@@ -80,10 +76,6 @@ variable "network_tags" {
 variable "post_deployment_script" {
   description = "SAP HANA post deployment script. Must be a gs:// or https:// link to the script."
   default     = ""
-}
-
-variable "startup_script" {
-  description = "Startup script to install SAP HANA."
 }
 
 variable "usr_sap_size" {

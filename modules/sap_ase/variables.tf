@@ -84,16 +84,12 @@ variable "post_deployment_script" {
   default     = ""
 }
 
-variable "startup_script" {
-  description = "Startup script to install SAP HANA."
-}
-
 variable "usr_sap_size" {
   description = "USR SAP size"
 }
 
 variable "sap_mnt_size" {
-  description = "SAP mount size"
+  description = "SAP mount size"hana
 }
 
 variable "swap_size" {

@@ -31,7 +31,6 @@
  instance_count=1
  autodelete_disk="true"
  boot_disk_type="pd-ssd"
- disk_type = "pd-standard"
  db2_sid="D01"
  db2sid_size=50
  db2home_size=30
