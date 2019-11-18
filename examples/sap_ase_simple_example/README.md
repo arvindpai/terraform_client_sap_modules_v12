@@ -38,6 +38,7 @@ Make sure you go through this [Requirements section](../../modules/sap_ase/READM
 | device\_6 | Device name | string | `"asesaptemp"` | no |
 | device\_7 | Device name | string | `"asesapdiag"` | no |
 | device\_8 | Device name | string | `"asebackup"` | no |
+| disk\_type | The GCE data disk type. May be set to pd-standard (for PD HDD) or pd-ssd. | string | n/a | yes |
 | instance\_count\_master | Compute Engine instance count | string | n/a | yes |
 | instance\_name | A unique name for the resource, required by GCE. Changing this forces a new resource to be created. | string | n/a | yes |
 | instance\_type | The GCE instance/machine type. | string | n/a | yes |
@@ -51,6 +52,7 @@ Make sure you go through this [Requirements section](../../modules/sap_ase/READM
 | sap\_ase\_sid | Sap Ase SID. | string | n/a | yes |
 | sap\_mnt\_size | SAP mount size | string | n/a | yes |
 | service\_account\_email | Email of service account to attach to the instance. | string | n/a | yes |
+| startup\_script | Startup script to install SAP HANA. | string | n/a | yes |
 | subnetwork | The name or self_link of the subnetwork where the isntance will be deployed. The subnetwork must exist in the same region this instance will be created in. | string | n/a | yes |
 | swap\_size | SWAP Size | string | n/a | yes |
 | usr\_sap\_size | USR SAP size | string | n/a | yes |

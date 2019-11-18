@@ -60,11 +60,6 @@ variable "boot_disk_type" {
   default     = "pd-ssd"
 }
 
-variable "pd_ssd_size" {
-  description = "Persistent disk size in GB"
-  default     = ""
-}
-
 variable "service_account_email" {
   description = "Email of service account to attach to the instance."
 }
@@ -89,7 +84,7 @@ variable "usr_sap_size" {
 }
 
 variable "sap_mnt_size" {
-  description = "SAP mount size"hana
+  description = "SAP mount size"
 }
 
 variable "swap_size" {
@@ -186,9 +181,6 @@ variable "device_8" {
   default     = "asebackup"
 }
 
-variable "instance_count_master" {
-  description = "Compute Engine instance count"
-}
 
 variable "public_ip" {
   description = "Determines whether a public IP address is added to your VM instance."

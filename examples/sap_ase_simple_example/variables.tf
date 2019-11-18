@@ -46,6 +46,10 @@ variable "autodelete_disk" {
   default     = true
 }
 
+variable "disk_type" {
+  description = "The GCE data disk type. May be set to pd-standard (for PD HDD) or pd-ssd."
+}
+
 variable "boot_disk_size" {
   description = "Root disk size in GB"
 }
@@ -53,6 +57,11 @@ variable "boot_disk_size" {
 variable "boot_disk_type" {
   description = "The GCE boot disk type. May be set to pd-standard (for PD HDD) or pd-ssd."
   default     = "pd-ssd"
+}
+
+variable "pd_ssd_size" {
+  description = "Persistent disk size in GB"
+  default     = ""
 }
 
 variable "service_account_email" {
@@ -171,6 +180,8 @@ variable "device_8" {
   default     = "asebackup"
 }
 
-variable "instance_count_master" {
-  description = "Compute Engine instance count"
+variable "public_ip" {
+  description = "Determines whether a public IP address is added to your VM instance."
+  default     = false
+  type        = bool
 }

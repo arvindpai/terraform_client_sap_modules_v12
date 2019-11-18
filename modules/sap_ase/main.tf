@@ -1,29 +1,22 @@
 /**
- * Copyright 2018 Google LLC
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+  * Copyright 2018 Google LLC
+  *
+  * Licensed under the Apache License, Version 2.0 (the "License");
+  * you may not use this file except in compliance with the License.
+  * You may obtain a copy of the License at
+  *
+  *      http://www.apache.org/licenses/LICENSE-2.0
+  *
+  * Unless required by applicable law or agreed to in writing, software
+  * distributed under the License is distributed on an "AS IS" BASIS,
+  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  * See the License for the specific language governing permissions and
+  * limitations under the License.
+  */
 
 
 data "template_file" "startup_sap_ase" {
   template = "${file("${path.module}/files/startup.sh")}"
-}
-
-resource "google_compute_address" "gcp_master_ip" {
-  project = "${var.project_id}"
-  count   = "${var.instance_count_master}"
-  name    = "gcp-master-${format("%01d", count.index + 2)}-ip"
-  region  = "${var.region}"
 }
 
 resource "google_compute_disk" "pd_ssd_disk_0" {
@@ -31,7 +24,7 @@ resource "google_compute_disk" "pd_ssd_disk_0" {
   name    = "${var.instance_name}-${var.device_0}"
   type    = "${var.disk_type}"
   zone    = "${var.zone}"
-  size    = "${var.pd_ssd_size}"
+  size    = "${var.usr_sap_size}"
 }
 
 resource "google_compute_disk" "pd_ssd_disk_1" {
@@ -39,7 +32,7 @@ resource "google_compute_disk" "pd_ssd_disk_1" {
   name    = "${var.instance_name}-${var.device_1}"
   type    = "${var.disk_type}"
   zone    = "${var.zone}"
-  size    = "${var.pd_ssd_size}"
+  size    = "${var.sap_mnt_size}"
 }
 
 resource "google_compute_disk" "pd_ssd_disk_2" {
@@ -47,7 +40,7 @@ resource "google_compute_disk" "pd_ssd_disk_2" {
   name    = "${var.instance_name}-${var.device_2}"
   type    = "${var.disk_type}"
   zone    = "${var.zone}"
-  size    = "${var.pd_ssd_size}"
+  size    = "${var.swap_size}"
 }
 
 resource "google_compute_disk" "pd_ssd_disk_3" {
@@ -55,7 +48,7 @@ resource "google_compute_disk" "pd_ssd_disk_3" {
   name    = "${var.instance_name}-${var.device_3}"
   type    = "${var.disk_type}"
   zone    = "${var.zone}"
-  size    = "${var.pd_ssd_size}"
+  size    = "${var.asesidSize}"
 }
 
 resource "google_compute_disk" "pd_ssd_disk_4" {
@@ -63,7 +56,7 @@ resource "google_compute_disk" "pd_ssd_disk_4" {
   name    = "${var.instance_name}-${var.device_4}"
   type    = "${var.disk_type}"
   zone    = "${var.zone}"
-  size    = "${var.pd_ssd_size}"
+  size    = "${var.asesapdataSize}"
 }
 
 resource "google_compute_disk" "pd_ssd_disk_5" {
@@ -71,7 +64,7 @@ resource "google_compute_disk" "pd_ssd_disk_5" {
   name    = "${var.instance_name}-${var.device_5}"
   type    = "${var.disk_type}"
   zone    = "${var.zone}"
-  size    = "${var.pd_ssd_size}"
+  size    = "${var.aselogSize}"
 }
 
 resource "google_compute_disk" "pd_ssd_disk_6" {
@@ -79,7 +72,7 @@ resource "google_compute_disk" "pd_ssd_disk_6" {
   name    = "${var.instance_name}-${var.device_6}"
   type    = "${var.disk_type}"
   zone    = "${var.zone}"
-  size    = "${var.pd_ssd_size}"
+  size    = "${var.asesaptempSize}"
 }
 
 resource "google_compute_disk" "pd_ssd_disk_7" {
@@ -87,7 +80,7 @@ resource "google_compute_disk" "pd_ssd_disk_7" {
   name    = "${var.instance_name}-${var.device_7}"
   type    = "${var.disk_type}"
   zone    = "${var.zone}"
-  size    = "${var.pd_ssd_size}"
+  size    = "${var.asediagSize}"
 }
 
 resource "google_compute_disk" "pd_ssd_disk_8" {
@@ -95,7 +88,7 @@ resource "google_compute_disk" "pd_ssd_disk_8" {
   name    = "${var.instance_name}-${var.device_8}"
   type    = "${var.disk_type}"
   zone    = "${var.zone}"
-  size    = "${var.pd_ssd_size}"
+  size    = "${var.asebackupSize}"
 }
 
 resource "google_compute_attached_disk" "pd_ssd_master_0" {
@@ -163,7 +156,6 @@ resource "google_compute_attached_disk" "pd_ssd_master_8" {
 
 resource "google_compute_instance" "master" {
   project        = "${var.project_id}"
-  count          = "${var.instance_count_master}"
   name           = "${var.instance_name}"
   machine_type   = "${var.instance_type}"
   zone           = "${var.zone}"
