@@ -14,8 +14,6 @@ Below is the list of available submodules:
 - [SAP EMPTYHA SVPC](./modules/sap_emptyha_svpc/README.md)
 - [SAP HANA SCALEOUT](./modules/sap_hana_scaleout/README.md)
 - [SAP HANA SCALEOUT SVPC](./modules/sap_hana_scaleout_svpc/README.md)
-- [SAP DB2](./modules/sap_db2/README.md)
-- [SAP DB2 SVPC](./modules/sap_db2_svpc/README.md)
 - [SAP ASE](./modules/sap_ase/README.md)
 - [SAP ASE SVPC](./modules/sap_ase_svpc/README.md)
 - [SAP HANA WITH NETWORK](./modules/sap_hana_with_network/README.md)
