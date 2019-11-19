@@ -16,7 +16,7 @@
 
 
 module "sap_hana" {
-  source        = "./sap_hana_python"
+  source        = "../sap_hana_python"
   instance-type = "${var.instance_type}"
 }
 
