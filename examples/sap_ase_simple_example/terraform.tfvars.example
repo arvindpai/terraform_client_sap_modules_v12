@@ -20,6 +20,8 @@ linux_image_project = "suse-sap-cloud"
 
 instance_type = "<instance_type>"
 
+instance_name = "<instance_name>"
+
 service_account_email = "<service-account-email>"
 
 project_id = "<project-id>"
