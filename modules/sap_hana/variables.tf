@@ -104,7 +104,7 @@ variable "device_name_pd_hdd" {
 variable "service_account_email" {
   description = "Email of service account to attach to the instance."
 }
-hana
+
 variable "network_tags" {
   type        = list
   description = "List of network tags to attach to the instance."
