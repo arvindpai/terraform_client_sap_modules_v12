@@ -44,6 +44,8 @@ zone = "us-central1-b"
 
 boot_disk_type = "pd-ssd"
 
+disk_type ="pd-ssd"
+
 aseSID = "D01"
 
 asesidSize = 10
