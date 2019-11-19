@@ -19,7 +19,7 @@
  instance_type="instance type"
  network_tags=[]
  subnetwork="custom subnetwork name"
- project="project-id"
+ project_id="project-id"
  region="region"
  instance_name="terraform-sap-suse-db2"
  usr_sap_size=15
