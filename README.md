@@ -19,6 +19,7 @@ Below is the list of available submodules:
 - [SAP DB2](./modules/sap_db2/README.md)
 - [SAP DB2 SVPC](./modules/sap_db2_svpc/README.md)
 - [SAP HANA WITH NETWORK](./modules/sap_hana_with_network/README.md)
+- [SAP HANA SVPC WITH NETWORK](./modules/sap_hana_svpc_with_network/README.md)
 - [NETWEAVER WITH NETWORK](./modules/netweaver_with_network/README.md)
 - [SAP HANA HA WITH NETWORK](./modules/sap_hana_ha_with_network/README.md)
 - [SAP ILB](./modules/ILB/README.md)

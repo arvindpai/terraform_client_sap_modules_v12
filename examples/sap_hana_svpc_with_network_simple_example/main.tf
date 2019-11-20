@@ -14,14 +14,15 @@
  * limitations under the License.
  */
 
-module "gcp_sap_hana_with_network" {
-  source                     = "../../modules/sap_hana_with_network"
+module "gcp_sap_hana_svpc_with_network" {
+  source                     = "../../modules/sap_hana_svpc_with_network"
   subnetwork                 = "${var.subnetwork}"
   linux_image_family         = "${var.linux_image_family}"
   linux_image_project        = "${var.linux_image_project}"
   instance_name              = "${var.instance_name}"
   instance_type              = "${var.instance_type}"
-  project_id                 = "${var.project_id}"
+  host_project_id            = "${var.host_project_id}"
+  service_project_id         = "${var.service_project_id}"
   region                     = "${var.region}"
   zone                       = "${var.zone}"
   service_account_email      = "${var.service_account_email}"

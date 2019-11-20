@@ -14,11 +14,13 @@
  * limitations under the License.
  */
 
-variable "project_id" {
+variable "service_project_id" {
   description = "The ID of the project in which the resources will be deployed."
 }
 
-
+variable "host_project_id" {
+  description = "The ID of the project in which the network resources will be deployed."
+}
 variable "zone" {
   description = "The zone that the instance should be created in."
 }

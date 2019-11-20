@@ -38,6 +38,7 @@ variable "route_tags" {
 # Network Variables
 variable "network" {
   description = "name of the vpc network"
+  default     = ""
 }
 
 
@@ -45,19 +46,22 @@ variable "description" {
   description = "The description of VPC network."
 }
 
-variable "auto_create_subnetworks" {
-  description = "Auto creation of subnetwork's whether want it false or true"
-  default     = "false"
-}
 
 #Subnetwork variables
 
 variable "subnetwork" {
   description = "The name or self_link of the subnetwork where the instance will be deployed. The subnetwork must exist in the same region this instance will be created in."
+  default     = ""
 }
 
 variable "ip_cidr_range" {
   description = "ip cidr range for subnetwork"
+}
+
+
+variable "auto_create_subnetworks" {
+  description = "Auto creation of subnetwork's whether want it false or true"
+  default     = "false"
 }
 
 
@@ -191,4 +195,10 @@ variable "sap_hana_sidadm_uid" {
 variable "sap_hana_sapsys_gid" {
   description = "SAP HANA SAP System GID"
   default     = 900
+}
+
+variable "public_ip" {
+  description = "Determines whether a public IP address is added to your VM instance."
+  default     = false
+  type        = bool
 }

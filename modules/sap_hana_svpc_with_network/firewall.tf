@@ -19,7 +19,7 @@
 
 resource "google_compute_firewall" "ssh" {
   name    = "${var.network}-firewall-ssh"
-  project = "${var.project_id}"
+  project = "${var.host_project_id}"
   network = "${google_compute_network.gcp_network.name}"
 
   allow {
@@ -33,7 +33,7 @@ resource "google_compute_firewall" "ssh" {
 
 resource "google_compute_firewall" "http" {
   name    = "${var.network}-firewall-http"
-  project = "${var.project_id}"
+  project = "${var.host_project_id}"
   network = "${google_compute_network.gcp_network.name}"
 
   allow {
@@ -47,7 +47,7 @@ resource "google_compute_firewall" "http" {
 
 resource "google_compute_firewall" "https" {
   name    = "${var.network}-firewall-https"
-  project = "${var.project_id}"
+  project = "${var.host_project_id}"
   network = "${google_compute_network.gcp_network.name}"
 
   allow {
@@ -60,7 +60,7 @@ resource "google_compute_firewall" "https" {
 }
 
 resource "google_compute_firewall" "icmp" {
-  project = "${var.project_id}"
+  project = "${var.host_project_id}"
   name    = "${var.network}-firewall-icmp"
   network = "${google_compute_network.gcp_network.name}"
 

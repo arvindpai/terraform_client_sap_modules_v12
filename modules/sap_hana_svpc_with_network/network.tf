@@ -18,7 +18,7 @@
 resource "google_compute_network" "gcp_network" {
   name                    = "${var.network}"
   auto_create_subnetworks = "${var.auto_create_subnetworks}"
-  project                 = "${var.project_id}"
+  project                 = "${var.host_project_id}"
   description             = "${var.description}"
   routing_mode            = "REGIONAL"
 }
@@ -26,7 +26,7 @@ resource "google_compute_network" "gcp_network" {
 # Creation of Subnetwork
 resource "google_compute_subnetwork" "gcp_subnetwork" {
   name          = "${var.subnetwork}"
-  project       = "${var.project_id}"
+  project       = "${var.host_project_id}"
   network       = "${google_compute_network.gcp_network.self_link}"
   region        = "${var.region}"
   ip_cidr_range = "${var.ip_cidr_range}"

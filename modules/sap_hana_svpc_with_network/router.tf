@@ -17,7 +17,7 @@
 
 # Creation of Router
 resource "google_compute_router" "gcp_router" {
-  project = "${var.project_id}"
+  project = "${var.host_project_id}"
   name    = "router"
   region  = google_compute_subnetwork.gcp_subnetwork.region
   network = google_compute_network.gcp_network.self_link
@@ -28,7 +28,7 @@ resource "google_compute_router" "gcp_router" {
 
 # Creation of NAT
 resource "google_compute_router_nat" "gcp_nat" {
-  project                            = "${var.project_id}"
+  project                            = "${var.host_project_id}"
   name                               = "nat-1"
   router                             = google_compute_router.gcp_router.name
   region                             = "${var.region}"
