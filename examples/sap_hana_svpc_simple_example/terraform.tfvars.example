@@ -35,5 +35,5 @@ sap_hana_sidadm_password   = "<my_password>"
 sap_hana_system_password   = "<my_password>"
 sap_hana_deployment_bucket = "bucket_name"
 zone = "zone"
-public_ip              = true
+public_ip = true
 region = "us-central1"

@@ -10,6 +10,7 @@ Below is the list of available submodules:
 - [SAP HANA HA ROUTE SVPC](./modules/sap_hana_ha_route_svpc/README.md)
 - [NETWEAVER](./modules/netweaver/README.md)
 - [NETWEAVER SVPC](./modules/netweaver_svpc/README.md)
+- [NETWEAVER SVPC WITH NETWORK](./modules/netweaver_svpc_with_network/README.md)
 - [SAP EMTPYHA](./modules/sap_emptyha/README.md)
 - [SAP EMPTYHA SVPC](./modules/sap_emptyha_svpc/README.md)
 - [SAP HANA SCALEOUT](./modules/sap_hana_scaleout/README.md)
