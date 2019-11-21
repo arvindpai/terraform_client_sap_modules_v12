@@ -2,33 +2,38 @@
 
 This module is a collection of multiple opinionated submodules to deploy SAP Products.
 Below is the list of available submodules:
-
+## Standalone Modules
 - [SAP HANA](./modules/sap_hana/README.md)
-- [SAP HANA SVPC](./modules/sap_hana_svpc/README.md)
 - [SAP HANA HA](./modules/sap_hana_ha/README.md)
-- [SAP HANA HA SVPC](./modules/sap_hana_ha_svpc/README.md)
-- [SAP HANA HA ROUTE SVPC](./modules/sap_hana_ha_route_svpc/README.md)
-- [NETWEAVER](./modules/netweaver/README.md)
-- [NETWEAVER SVPC](./modules/netweaver_svpc/README.md)
-- [NETWEAVER SVPC WITH NETWORK](./modules/netweaver_svpc_with_network/README.md)
 - [SAP EMTPYHA](./modules/sap_emptyha/README.md)
-- [SAP EMPTYHA SVPC](./modules/sap_emptyha_svpc/README.md)
 - [SAP HANA SCALEOUT](./modules/sap_hana_scaleout/README.md)
-- [SAP HANA SCALEOUT SVPC](./modules/sap_hana_scaleout_svpc/README.md)
+- [NETWEAVER](./modules/netweaver/README.md)
 - [SAP ASE](./modules/sap_ase/README.md)
-- [SAP ASE SVPC](./modules/sap_ase_svpc/README.md)
 - [SAP DB2](./modules/sap_db2/README.md)
-- [SAP DB2 SVPC](./modules/sap_db2_svpc/README.md)
-- [SAP HANA WITH NETWORK](./modules/sap_hana_with_network/README.md)
-- [SAP HANA SVPC WITH NETWORK](./modules/sap_hana_svpc_with_network/README.md)
-- [NETWEAVER WITH NETWORK](./modules/netweaver_with_network/README.md)
-- [SAP HANA HA WITH NETWORK](./modules/sap_hana_ha_with_network/README.md)
-- [SAP HANA HA SVPC WITH NETWORK](./modules/sap_hana_ha_svpc_with_network/README.md)
 - [SAP ILB](./modules/ILB/README.md)
 - [SAP APP DR](./modules/sap_app_dr/README.md)
+## SVPC Modules
+- [SAP HANA SVPC](./modules/sap_hana_svpc/README.md)
+- [NETWEAVER SVPC](./modules/netweaver_svpc/README.md)
+- [SAP HANA HA SVPC](./modules/sap_hana_ha_svpc/README.md)
+- [SAP HANA HA ROUTE SVPC](./modules/sap_hana_ha_route_svpc/README.md)
+- [SAP EMPTYHA SVPC](./modules/sap_emptyha_svpc/README.md)
+- [SAP HANA SCALEOUT SVPC](./modules/sap_hana_scaleout_svpc/README.md)
+- [SAP ASE SVPC](./modules/sap_ase_svpc/README.md)
+- [SAP DB2 SVPC](./modules/sap_db2_svpc/README.md)
 - [SAP APP DR SVPC](./modules/sap_app_dr_svpc/README.md)
+## Standalone Modules with Network
+- [SAP HANA WITH NETWORK](./modules/sap_hana_with_network/README.md)
+- [SAP HANA HA WITH NETWORK](./modules/sap_hana_ha_with_network/README.md)
+- [NETWEAVER WITH NETWORK](./modules/netweaver_with_network/README.md)
+## SVPC modules with Network
+- [SAP HANA SVPC WITH NETWORK](./modules/sap_hana_svpc_with_network/README.md)
+- [SAP HANA HA SVPC WITH NETWORK](./modules/sap_hana_ha_svpc_with_network/README.md)
+- [NETWEAVER SVPC WITH NETWORK](./modules/netweaver_svpc_with_network/README.md)
+
 
 Each submodules have their own usage documented in the [modules](./modules) folder.
+
 For example, see the [SAP HANA Usage Section](./modules/sap_hana/README.md#Usage).
 
 Functional examples are included in the
