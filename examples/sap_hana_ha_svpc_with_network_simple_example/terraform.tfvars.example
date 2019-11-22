@@ -74,6 +74,6 @@
 
   route_destination_range = "10.0.1.10/24"
 
-  route_name = "sap-hana-route"
+  #route_name = "sap-hana-route"
 
   route_tags = ["sap_routes"]
