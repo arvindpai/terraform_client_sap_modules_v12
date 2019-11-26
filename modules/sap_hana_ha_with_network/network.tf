@@ -15,7 +15,6 @@ resource "google_compute_subnetwork" "gcp_subnetwork" {
   region                   = "${var.region}"
   ip_cidr_range            = "${var.ip_cidr_range}"
   private_ip_google_access = "true"
-  enable_flow_logs         = "false"
   secondary_ip_range {
     range_name    = "${var.sap_vip_secondary_range}"
     ip_cidr_range = "${var.secondary_ip_cidr_range}"
