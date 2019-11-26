@@ -46,7 +46,6 @@ module "gcp_sap_hana_svpc_with_network" {
   address_name               = "${var.address_name}"
   priority                   = "${var.priority}"
   route_destination_range    = "${var.route_destination_range}"
-  route_name                 = "${var.route_name}"
   route_tags                 = "${var.route_tags}"
   ip_cidr_range              = "${var.ip_cidr_range}"
   description                = "${var.description}"

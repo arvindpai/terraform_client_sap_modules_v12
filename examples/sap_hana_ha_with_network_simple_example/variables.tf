@@ -38,10 +38,6 @@ variable "project_id" {
   description = "The ID of the project in which the resources will be deployed."
 }
 
-# Route variables
-variable "route_name" {
-  description = "name of the route"
-}
 
 variable "route_destination_range" {
   description = "Enter the range for the route destination"

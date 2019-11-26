@@ -39,7 +39,6 @@ module "gcp_netweaver_with_network" {
   disk_type               = "${var.disk_type}"
   priority                = "${var.priority}"
   route_destination_range = "${var.route_destination_range}"
-  route_name              = "${var.route_name}"
   route_tags              = "${var.route_tags}"
   ip_cidr_range           = "${var.ip_cidr_range}"
   description             = "${var.description}"

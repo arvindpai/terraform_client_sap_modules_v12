@@ -154,10 +154,6 @@ variable "sap_hana_sapsys_gid" {
 }
 
 # Route variables
-variable "route_name" {
-  description = "name of the route"
-}
-
 variable "route_destination_range" {
   description = "Enter the range for the route destination"
 }
