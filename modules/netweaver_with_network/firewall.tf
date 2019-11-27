@@ -54,3 +54,14 @@ resource "google_compute_firewall" "icmp" {
   target_tags   = ["${var.network}-firewall-icmp"]
   source_ranges = ["0.0.0.0/0"]
 }
+
+resource "google_compute_firewall" "internal_access" {
+  project   = "${var.project_id}"
+  name      = "${var.network}-firewall-internal-access"
+  network   = "${google_compute_network.gcp_network.name}"
+  direction = "INGRESS"
+  allow {
+    protocol = "all"
+    ports    = []
+  }
+}
