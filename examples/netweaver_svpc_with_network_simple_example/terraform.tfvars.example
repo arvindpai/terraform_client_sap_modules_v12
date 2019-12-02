@@ -57,3 +57,7 @@ priority = 800
 route_destination_range = "10.0.1.10/24"
 
 route_tags = ["sap_routes"]
+
+description = "sap-vpc-with-network"
+
+network = "host project network name"
