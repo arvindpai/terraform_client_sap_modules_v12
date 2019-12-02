@@ -34,7 +34,7 @@
 
   host_project_id = "host_project id"
 
-  service_project_id = "service_project id"
+  project_id = "project id"
 
   region = "region"
 

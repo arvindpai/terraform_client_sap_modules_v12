@@ -35,14 +35,13 @@ variable "instance_type" {
 }
 
 
-variable "service_project_id" {
+variable "project_id" {
   description = "The ID of the project in which the resources will be deployed."
 }
 
 variable "host_project_id" {
   description = "The ID of the project in which the network resources will be deployed."
 }
-# Firewall Variables
 
 # Route variables
 variable "route_destination_range" {

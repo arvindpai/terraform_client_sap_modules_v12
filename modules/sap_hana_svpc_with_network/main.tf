@@ -30,7 +30,7 @@ data "template_file" "startup_sap_hana_svpc_with_network" {
 }
 
 resource "google_compute_disk" "gcp_sap_hana_sd_0" {
-  project = "${var.service_project_id}"
+  project = "${var.project_id}"
   name    = "${var.disk_name_0}-${var.device_name_pd_ssd}"
   type    = "${var.disk_type_0}"
   zone    = "${var.zone}"
@@ -44,7 +44,7 @@ resource "google_compute_disk" "gcp_sap_hana_sd_0" {
 }
 
 resource "google_compute_disk" "gcp_sap_hana_sd_1" {
-  project = "${var.service_project_id}"
+  project = "${var.project_id}"
   name    = "${var.disk_name_1}-${var.device_name_pd_hdd}"
   type    = "${var.disk_type_1}"
   zone    = "${var.zone}"
@@ -57,7 +57,7 @@ resource "google_compute_disk" "gcp_sap_hana_sd_1" {
 }
 
 resource "google_compute_address" "gcp_sap_hana_ip" {
-  project = "${var.service_project_id}"
+  project = "${var.project_id}"
   name    = "${var.address_name}"
   region  = "${var.region}"
 
@@ -69,7 +69,7 @@ resource "google_compute_address" "gcp_sap_hana_ip" {
 }
 
 resource "google_compute_instance" "gcp_sap_hana" {
-  project      = "${var.service_project_id}"
+  project      = "${var.project_id}"
   name         = "${var.instance_name}"
   machine_type = "${var.instance_type}"
   zone         = "${var.zone}"
@@ -106,7 +106,7 @@ resource "google_compute_instance" "gcp_sap_hana" {
 
   network_interface {
     subnetwork         = "${var.subnetwork}"
-    subnetwork_project = "${var.host_project_id}"
+    subnetwork_project = "${var.host_project_id}}"
 
     access_config {
       nat_ip = "${element(google_compute_address.gcp_sap_hana_ip.*.address, 0)}"

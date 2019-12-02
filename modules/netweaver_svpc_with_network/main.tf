@@ -31,7 +31,7 @@ data "template_file" "netweaver" {
 
 
 resource "google_compute_disk" "gcp_nw_pd_0" {
-  project = "${var.service_project_id}"
+  project = "${var.project_id}"
   name    = "${var.instance_name}-nw-0"
   type    = "${var.disk_type}"
   zone    = "${var.zone}"
@@ -46,7 +46,7 @@ resource "google_compute_disk" "gcp_nw_pd_0" {
 }
 
 resource "google_compute_disk" "gcp_nw_pd_1" {
-  project = "${var.service_project_id}"
+  project = "${var.project_id}"
   name    = "${var.instance_name}-nw-1"
   type    = "${var.disk_type}"
   zone    = "${var.zone}"
@@ -59,7 +59,7 @@ resource "google_compute_disk" "gcp_nw_pd_1" {
 }
 
 resource "google_compute_disk" "gcp_nw_pd_2" {
-  project = "${var.service_project_id}"
+  project = "${var.project_id}"
   name    = "${var.instance_name}-nw-2"
   type    = "${var.disk_type}"
   zone    = "${var.zone}"
@@ -72,7 +72,7 @@ resource "google_compute_disk" "gcp_nw_pd_2" {
 }
 
 resource "google_compute_attached_disk" "gcp_nw_attached_pd_0" {
-  project     = "${var.service_project_id}"
+  project     = "${var.project_id}"
   count       = "${var.usr_sap_size > 0 ? 1 : 0}"
   device_name = "${local.device_name_1}"
   disk        = "${google_compute_disk.gcp_nw_pd_0[0].id}"
@@ -84,7 +84,7 @@ resource "google_compute_attached_disk" "gcp_nw_attached_pd_0" {
 }
 
 resource "google_compute_attached_disk" "gcp_nw_attached_pd_1" {
-  project     = "${var.service_project_id}"
+  project     = "${var.project_id}"
   count       = "${var.sap_mnt_size > 0 ? 1 : 0}"
   device_name = "${local.device_name_2}"
   disk        = "${google_compute_disk.gcp_nw_pd_1[0].id}"
@@ -96,7 +96,7 @@ resource "google_compute_attached_disk" "gcp_nw_attached_pd_1" {
 }
 
 resource "google_compute_attached_disk" "gcp_nw_attached_pd_2" {
-  project     = "${var.service_project_id}"
+  project     = "${var.project_id}"
   count       = "${var.swap_size > 0 ? 1 : 0}"
   device_name = "${local.device_name_3}"
   disk        = "${google_compute_disk.gcp_nw_pd_2[0].id}"
@@ -107,7 +107,7 @@ resource "google_compute_attached_disk" "gcp_nw_attached_pd_2" {
   ]
 }
 resource "google_compute_instance" "gcp_nw" {
-  project      = "${var.service_project_id}"
+  project      = "${var.project_id}"
   name         = "${var.instance_name}"
   machine_type = "${var.instance_type}"
   zone         = "${var.zone}"

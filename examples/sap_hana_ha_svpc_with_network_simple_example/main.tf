@@ -21,7 +21,7 @@ module "gcp_sap_hana_ha_vpc_with_network" {
   linux_image_project        = "${var.linux_image_project}"
   instance_type              = "${var.instance_type}"
   host_project_id            = "${var.host_project_id}"
-  service_project_id         = "${var.service_project_id}"
+  project_id                 = "${var.project_id}"
   region                     = "${var.region}"
   service_account_email      = "${var.service_account_email}"
   boot_disk_size             = "${var.boot_disk_size}"

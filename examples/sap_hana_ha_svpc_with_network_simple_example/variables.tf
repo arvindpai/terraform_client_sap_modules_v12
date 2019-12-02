@@ -34,7 +34,7 @@ variable "instance_type" {
   description = "The GCE instance/machine type."
 }
 
-variable "service_project_id" {
+variable "project_id" {
   description = "The ID of the project in which the resources will be deployed."
 }
 

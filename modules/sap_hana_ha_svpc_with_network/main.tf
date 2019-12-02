@@ -36,7 +36,7 @@ data "template_file" "startup_sap_hana_2" {
 }
 
 resource "google_compute_address" "primary_instance_ip" {
-  project = "${var.service_project_id}"
+  project = "${var.project_id}"
   name    = "${var.primary_instance_ip}"
   region  = "${var.region}"
   depends_on = [
@@ -46,7 +46,7 @@ resource "google_compute_address" "primary_instance_ip" {
 }
 
 resource "google_compute_address" "secondary_instance_ip" {
-  project = "${var.service_project_id}"
+  project = "${var.project_id}"
   name    = "${var.secondary_instance_ip}"
   region  = "${var.region}"
   depends_on = [
@@ -56,7 +56,7 @@ resource "google_compute_address" "secondary_instance_ip" {
 }
 
 resource "google_compute_address" "internal_sap_vip" {
-  project      = "${var.service_project_id}"
+  project      = "${var.project_id}"
   name         = "${var.sap_vip_internal_address}"
   subnetwork   = "${var.subnetwork}"
   address_type = "INTERNAL"
@@ -69,7 +69,7 @@ resource "google_compute_address" "internal_sap_vip" {
 }
 
 resource "google_compute_disk" "gcp_sap_hana_sd_0" {
-  project = "${var.service_project_id}"
+  project = "${var.project_id}"
   name    = "${var.disk_name_0}"
   type    = "${var.disk_type_0}"
   zone    = "${var.primary_zone}"
@@ -81,7 +81,7 @@ resource "google_compute_disk" "gcp_sap_hana_sd_0" {
 }
 
 resource "google_compute_disk" "gcp_sap_hana_sd_1" {
-  project = "${var.service_project_id}"
+  project = "${var.project_id}"
   name    = "${var.disk_name_1}"
   type    = "${var.disk_type_1}"
   zone    = "${var.primary_zone}"
@@ -93,7 +93,7 @@ resource "google_compute_disk" "gcp_sap_hana_sd_1" {
 }
 
 resource "google_compute_disk" "gcp_sap_hana_sd_2" {
-  project = "${var.service_project_id}"
+  project = "${var.project_id}"
   name    = "${var.disk_name_2}"
   type    = "${var.disk_type_0}"
   zone    = "${var.secondary_zone}"
@@ -105,7 +105,7 @@ resource "google_compute_disk" "gcp_sap_hana_sd_2" {
 }
 
 resource "google_compute_disk" "gcp_sap_hana_sd_3" {
-  project = "${var.service_project_id}"
+  project = "${var.project_id}"
   name    = "${var.disk_name_3}"
   type    = "${var.disk_type_1}"
   zone    = "${var.secondary_zone}"
@@ -117,7 +117,7 @@ resource "google_compute_disk" "gcp_sap_hana_sd_3" {
 }
 
 resource "google_compute_instance" "primary" {
-  project      = "${var.service_project_id}"
+  project      = "${var.project_id}"
   name         = "${var.primary_instance_name}"
   machine_type = "${var.instance_type}"
   zone         = "${var.primary_zone}"
@@ -203,7 +203,7 @@ resource "google_compute_instance" "primary" {
 }
 
 resource "google_compute_instance" "secondary" {
-  project      = "${var.service_project_id}"
+  project      = "${var.project_id}"
   name         = "${var.secondary_instance_name}"
   machine_type = "${var.instance_type}"
   zone         = "${var.secondary_zone}"

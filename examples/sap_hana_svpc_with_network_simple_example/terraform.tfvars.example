@@ -2,7 +2,7 @@ service_account_email = "service account"
 
 host_project_id = "host_project id"
 
-service_project_id = "service_project id"
+project_id = "service_project id"
 
 instance_name = "sap-terra-1"
 

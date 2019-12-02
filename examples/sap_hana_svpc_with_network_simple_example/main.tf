@@ -22,7 +22,7 @@ module "gcp_sap_hana_svpc_with_network" {
   instance_name              = "${var.instance_name}"
   instance_type              = "${var.instance_type}"
   host_project_id            = "${var.host_project_id}"
-  service_project_id         = "${var.service_project_id}"
+  project_id                 = "${var.project_id}"
   region                     = "${var.region}"
   zone                       = "${var.zone}"
   service_account_email      = "${var.service_account_email}"

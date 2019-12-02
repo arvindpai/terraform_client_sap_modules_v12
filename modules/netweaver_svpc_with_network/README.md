@@ -32,7 +32,7 @@ module "gcp_netweaver_svpc_with_network" {
   region                  = "${var.region}"
   network_tags            = "${var.network_tags}"
   host_project_id         = "${var.host_project_id}"
-  service_project_id      = "${var.service_project_id}"
+  project_id              = "${var.project_id}"
   zone                    = "${var.zone}"
   service_account_email   = "${var.service_account_email}"
   boot_disk_size          = "${var.boot_disk_size}"
