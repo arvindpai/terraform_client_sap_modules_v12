@@ -79,3 +79,5 @@
   description = "sap-vpc-with-network"
 
   network = "host project network name"
+  
+  post_deployment_script = ""
