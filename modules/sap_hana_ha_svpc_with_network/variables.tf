@@ -77,9 +77,6 @@ variable "subnetwork" {
   description = "The name or self_link of the subnetwork where the instance will be deployed. The subnetwork must exist in the same region this instance will be created in."
 }
 
-variable "secondary_ip_cidr_range" {
-  description = "ip cidr range for subnetwork"
-}
 
 variable "ip_cidr_range" {
   description = "ip cidr range for secondary ip ranges"
@@ -88,6 +85,7 @@ variable "ip_cidr_range" {
 
 variable "sap_vip_secondary_range" {
   description = "SAP seconday VIP range"
+  default     = ""
 }
 
 variable "region" {

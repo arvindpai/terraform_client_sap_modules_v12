@@ -35,39 +35,6 @@ data "template_file" "startup_sap_hana_2" {
   ]
 }
 
-resource "google_compute_address" "primary_instance_ip" {
-  project = "${var.project_id}"
-  name    = "${var.primary_instance_ip}"
-  region  = "${var.region}"
-  depends_on = [
-    "google_compute_network.gcp_network",
-    "google_compute_subnetwork.gcp_subnetwork",
-  ]
-}
-
-resource "google_compute_address" "secondary_instance_ip" {
-  project = "${var.project_id}"
-  name    = "${var.secondary_instance_ip}"
-  region  = "${var.region}"
-  depends_on = [
-    "google_compute_network.gcp_network",
-    "google_compute_subnetwork.gcp_subnetwork",
-  ]
-}
-
-resource "google_compute_address" "internal_sap_vip" {
-  project      = "${var.project_id}"
-  name         = "${var.sap_vip_internal_address}"
-  subnetwork   = "${var.subnetwork}"
-  address_type = "INTERNAL"
-  address      = "${var.sap_vip}"
-  region       = "${var.region}"
-  depends_on = [
-    "google_compute_network.gcp_network",
-    "google_compute_subnetwork.gcp_subnetwork",
-  ]
-}
-
 resource "google_compute_disk" "gcp_sap_hana_sd_0" {
   project = "${var.project_id}"
   name    = "${var.disk_name_0}"
@@ -156,18 +123,9 @@ resource "google_compute_instance" "primary" {
   }
 
   network_interface {
-    network_ip         = "${google_compute_address.internal_sap_vip.address}"
     subnetwork         = "${var.subnetwork}"
     subnetwork_project = "${var.host_project_id}"
 
-    alias_ip_range {
-      ip_cidr_range         = "${var.secondary_ip_cidr_range}"
-      subnetwork_range_name = "${var.sap_vip_secondary_range}"
-    }
-
-    access_config {
-      nat_ip = "${google_compute_address.primary_instance_ip.address}"
-    }
   }
 
   metadata = {
@@ -245,9 +203,6 @@ resource "google_compute_instance" "secondary" {
     subnetwork         = "${var.subnetwork}"
     subnetwork_project = "${var.host_project_id}"
 
-    access_config {
-      nat_ip = "${google_compute_address.secondary_instance_ip.address}"
-    }
   }
 
   metadata = {

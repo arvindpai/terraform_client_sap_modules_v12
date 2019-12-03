@@ -43,7 +43,6 @@ module "gcp_sap_hana_ha_vpc_with_network" {
   sap_hana_sidadm_uid        = 900
   sap_hana_sapsys_gid        = 900
   sap_vip                    = "${var.sap_vip}"
-  sap_vip_secondary_range    = "${var.sap_vip_secondary_range}"
   primary_instance_ip        = "${var.primary_instance_ip}"
   secondary_instance_ip      = "${var.secondary_instance_ip}"
   sap_vip_internal_address   = "${var.sap_vip_internal_address}"
@@ -51,7 +50,6 @@ module "gcp_sap_hana_ha_vpc_with_network" {
   priority                   = "${var.priority}"
   route_destination_range    = "${var.route_destination_range}"
   route_tags                 = "${var.route_tags}"
-  secondary_ip_cidr_range    = "${var.secondary_ip_cidr_range}"
   description                = "${var.description}"
   network                    = "${var.network}"
 }

@@ -68,8 +68,6 @@
 
   ip_cidr_range = "10.0.1.0/24"
 
-  secondary_ip_cidr_range = "192.168.10.0/24"
-
   priority = 800
 
   route_destination_range = "10.0.1.10/24"
@@ -79,3 +77,5 @@
   description = "sap-vpc-with-network"
 
   network = "host project network name"
+
+  post_deployment_script = ""
