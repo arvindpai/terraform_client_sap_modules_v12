@@ -73,7 +73,7 @@ resource "google_compute_firewall" "icmp" {
 }
 
 resource "google_compute_firewall" "internal_access" {
-  project   = "${var.project_id}"
+  project   = "${var.host_project_id}"
   name      = "${var.network}-firewall-internal-access"
   network   = "${google_compute_network.gcp_network.name}"
   direction = "INGRESS"
