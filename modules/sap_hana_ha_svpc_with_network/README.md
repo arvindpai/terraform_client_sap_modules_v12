@@ -52,7 +52,6 @@ ip_cidr_range              = "${var.ip_cidr_range}"
 priority                   = "${var.priority}"
 route_destination_range    = "${var.route_destination_range}"
 route_tags                 = "${var.route_tags}"
-secondary_ip_cidr_range    = "${var.secondary_ip_cidr_range}"
 description                = "${var.description}"
 network                    = "${var.network}"
 }
